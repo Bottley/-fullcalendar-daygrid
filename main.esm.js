@@ -704,7 +704,7 @@ function renderCellHtml(date, dateProfile, context, otherAttrs) {
     var isDateValid = rangeContainsMarker(dateProfile.activeRange, date); // TODO: called too frequently. cache somehow.
     var classes = getDayClasses(date, dateProfile, context);
     classes.unshift('fc-day', theme.getClass('widgetContent'));
-    return '<td class="' + classes.join(' ') + '"' +
+    return '<td' + ' id="' + dateEnv.formatIso(date, { omitTime: true }) + '" class="' + classes.join(' ') + '"' +
         (isDateValid ?
             ' data-date="' + dateEnv.formatIso(date, { omitTime: true }) + '"' :
             '') +
