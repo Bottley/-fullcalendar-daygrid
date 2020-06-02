@@ -225,16 +225,19 @@ Docs & License: https://fullcalendar.io/
             var classes = this.getSegClasses(seg, isDraggable, isResizableFromStart || isResizableFromEnd, mirrorInfo);
             var skinCss = core.cssToStr(this.getSkinCss(eventUi));
             var timeHtml = '';
-            var timeText;
+            //var timeText;
             var titleHtml;
             classes.unshift('fc-day-grid-event', 'fc-h-event');
+            // Remove event time
             // Only display a timed events time if it is the starting segment
+            /*
             if (seg.isStart) {
                 timeText = this.getTimeText(eventRange);
                 if (timeText) {
                     timeHtml = '<span class="fc-time">' + core.htmlEscape(timeText) + '</span>';
                 }
             }
+            */
             titleHtml =
                 '<span class="fc-title">' +
                     (core.htmlEscape(eventDef.title || '') || '&nbsp;') + // we always want one line of height
