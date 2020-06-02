@@ -221,16 +221,19 @@ var SimpleDayGridEventRenderer = /** @class */ (function (_super) {
         var classes = this.getSegClasses(seg, isDraggable, isResizableFromStart || isResizableFromEnd, mirrorInfo);
         var skinCss = cssToStr(this.getSkinCss(eventUi));
         var timeHtml = '';
-        var timeText;
+        //var timeText;
         var titleHtml;
         classes.unshift('fc-day-grid-event', 'fc-h-event');
+        // Remove event name
         // Only display a timed events time if it is the starting segment
+        /*
         if (seg.isStart) {
             timeText = this.getTimeText(eventRange);
             if (timeText) {
                 timeHtml = '<span class="fc-time">' + htmlEscape(timeText) + '</span>';
             }
         }
+        */
         titleHtml =
             '<span class="fc-title">' +
                 (htmlEscape(eventDef.title || '') || '&nbsp;') + // we always want one line of height
